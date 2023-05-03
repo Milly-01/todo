@@ -2,6 +2,9 @@
 
 
  
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
     <div class="heading-todo" id="heading">
       <h1 class="style-heading">TODO</h1>
     </div>
@@ -15,31 +18,27 @@
 
     <hr>
 
-
-
-
-
-
- 
-
- 
- 
-
+    
   <div>
-     <% newListItems.forEach(function(element){%>
-      <div class="box2">
-        <form method="post" action="/delete">
-          <div class="item">
-            <input name="checkname" value="<%=element._id%>" onChange="this.form.submit()" type="checkbox">
-            <p><%=element.name%></p>
-          </div>
-          <input name="checklist" type="hidden" value="<%=listTitle %>">
-        </form>
-    </div>
-    <% }); %>
+    <% newListItems.forEach(function(element){%>
+     <div class="box2">
+       <form method="post" action="/delete">
+         <div class="item">
+           <input name="checkname" value="<%=element._id%>" onChange="this.form.submit()" type="checkbox">
+           <p><%=element.name%></p>
+         </div>
+         <input name="checklist" type="hidden" value="<%=listTitle %>">
+       </form>
+   </div>
+   <% }); %>
+ </div>
+
+
+
   </div>
+  <div class="col-md-3"></div>
 
- 
-
+</div>
+   
 
 <%- include("footer") -%>
