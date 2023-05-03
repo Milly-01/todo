@@ -1,0 +1,45 @@
+<%- include("header") -%>
+
+
+ 
+    <div class="heading-todo" id="heading">
+      <h1 class="style-heading">TODO</h1>
+    </div>
+
+    <div class="box">
+      <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button class="add" type="submit" name="list" value="<%=listTitle%>">+</button>
+      </form>
+    </div>
+
+    <hr>
+
+
+
+
+
+
+ 
+
+ 
+ 
+
+  <div>
+     <% newListItems.forEach(function(element){%>
+      <div class="box2">
+        <form method="post" action="/delete">
+          <div class="item">
+            <input name="checkname" value="<%=element._id%>" onChange="this.form.submit()" type="checkbox">
+            <p><%=element.name%></p>
+          </div>
+          <input name="checklist" type="hidden" value="<%=listTitle %>">
+        </form>
+    </div>
+    <% }); %>
+  </div>
+
+ 
+
+
+<%- include("footer") -%>
